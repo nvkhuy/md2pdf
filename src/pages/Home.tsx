@@ -1,15 +1,20 @@
-import { useRef, useState } from 'react'
+import { useState } from 'react'
 import { useReactToPrint } from 'react-to-print'
-import { MarkdownEditor, MarkdownViewer } from 'react-github-markdown'
+import { useRef } from 'react'
+import ReactMarkdown from 'react-markdown'
+import remarkGfm from 'remark-gfm'
+import 'github-markdown-css/github-markdown-light.css'
+import defaultText from '../contants/defaultmd.ts'
 
 const Home = () => {
-    const [text, setText] = useState('')
+    const [text, setText] = useState(defaultText)
     const viewerRef = useRef<HTMLDivElement | null>(null)
     const reactToPrintFn = useReactToPrint({ contentRef: viewerRef })
 
     return (
-        <div className={`p-10`}>
-            <div className='text-right'>
+        <div className='flex h-screen flex-col overflow-hidden bg-gray-200'>
+            {/* Header */}
+            <div className='p-2 text-right'>
                 <button
                     onClick={() => {
                         reactToPrintFn()
@@ -20,19 +25,25 @@ const Home = () => {
                 </button>
             </div>
 
-            <div className='flex h-screen'>
-                <div className='h-full w-full'>
-                    <MarkdownEditor
-                        monospace={true}
-                        minLines={45}
+            <div className='flex h-screen overflow-hidden'>
+                {/* Editor Section */}
+                <div className='w-1/2'>
+                    <textarea
+                        className='h-full w-full flex-shrink-0 overflow-auto bg-gray-700 px-4 text-gray-300'
                         value={text}
-                        onChange={setText}
-                        isDarkTheme={false}
+                        onChange={(e) => setText(e.target.value)}
                     />
                 </div>
 
-                <div className={`h-full w-full overflow-y-auto px-4`} ref={viewerRef}>
-                    <MarkdownViewer value={text} isDarkTheme={false} />
+                {/* Markdown Viewer Section */}
+                <div className='w-1/2'>
+                    <div className='markdown-body h-full overflow-auto px-4' ref={viewerRef}>
+                        <ReactMarkdown
+                            className={`not-apply-tailwind`}
+                            children={text}
+                            remarkPlugins={[remarkGfm]}
+                        />
+                    </div>
                 </div>
             </div>
         </div>

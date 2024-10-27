@@ -1,3 +1,18 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Prevent Tailwind from applying styles inside this class */
+.not-apply-tailwind {
+}
+
+.not-apply-tailwind h1,
+.not-apply-tailwind h2,
+.not-apply-tailwind h3,
+.not-apply-tailwind p,
+.not-apply-tailwind ul,
+.not-apply-tailwind ol,
+.not-apply-tailwind blockquote,
+.not-apply-tailwind pre {
+    all: revert; /* Reset back to browser defaults */
+}
