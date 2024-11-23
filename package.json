@@ -13,10 +13,12 @@
         "prettier:fix": "prettier --write \"src/**/(*.tsx|*.ts|*.css|*.scss)\""
     },
     "dependencies": {
+        "@types/react-syntax-highlighter": "^15.5.13",
         "github-markdown-css": "^5.7.0",
         "react": "^18.3.1",
         "react-dom": "^18.3.1",
         "react-markdown": "^8.0.6",
+        "react-syntax-highlighter": "^15.6.1",
         "react-to-print": "^3.0.2",
         "rehype-highlight": "^7.0.1",
         "rehype-katex": "^7.0.1",

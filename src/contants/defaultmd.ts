@@ -58,7 +58,7 @@ You can create [inline links](https://example.com) like this, or [reference link
 You can add inline code like this: \`console.log('Hello, world!')\`.
 
 #### Code Block
-\`\`\`javascript
+\`\`\`js
 function greet(name) {
     console.log(\`Hello, ${name}!\`);
 }
