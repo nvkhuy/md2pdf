@@ -1,3 +1,8 @@
+html,
+body {
+    overflow: hidden !important; /*Inherit overflow prop to child*/
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

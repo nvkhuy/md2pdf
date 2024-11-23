@@ -10,7 +10,7 @@ type CustomMarkdownProps = {
 
 const CustomMarkdown = ({ text }: CustomMarkdownProps) => {
     return (
-        <div className=''>
+        <div className='custom-markdown'>
             <ReactMarkdown
                 className='not-apply-tailwind'
                 remarkPlugins={[remarkGfm, remarkMath]}
