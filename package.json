@@ -19,7 +19,9 @@
         "react-markdown": "^8.0.6",
         "react-to-print": "^3.0.2",
         "rehype-highlight": "^7.0.1",
-        "remark-gfm": "^3.0.1"
+        "rehype-katex": "^7.0.1",
+        "remark-gfm": "^3.0.1",
+        "remark-math": "^5.1.1"
     },
     "devDependencies": {
         "@eslint/js": "^9.13.0",

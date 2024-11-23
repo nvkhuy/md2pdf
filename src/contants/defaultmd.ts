@@ -2,7 +2,6 @@ const defaultText = `
 # Hello
 Here’s some long Markdown content with various elements (headers, lists, code blocks, images, tables, etc.) that you can use to test your Markdown render feature:
 
-\`\`\`md
 # Welcome to Markdown Renderer!
 
 Markdown is a lightweight markup language that you can use to add formatting elements to plaintext text documents. It's commonly used for README files, for writing messages in online discussion forums, and to create rich text using a plain text editor.
@@ -116,6 +115,16 @@ def greet(name):
 greet("World")
 \`\`\`
 
+### Math Formula
+
+$$
+f(x)=
+\\begin{cases}
+1/d_{ij} & \\quad \\text{when $d_{ij} \\leq 160$}\\\\ 
+0 & \\quad \\text{otherwise}
+\\end{cases}
+$$
+
 ## Conclusion
 
 Markdown is a powerful tool for creating rich text using simple syntax. You can use it for documentation, notes, or even web content. It's easy to learn and widely supported!
@@ -137,5 +146,6 @@ Markdown is a powerful tool for creating rich text using simple syntax. You can 
 12. **Horizontal Rule**
 
 You can copy this Markdown into your app to check how your renderer handles various types of content. Let me know how it works!
+\`\`\`
 `
 export default defaultText
