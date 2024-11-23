@@ -4,13 +4,17 @@ import remarkMath from 'remark-math'
 import rehypeKatex from 'rehype-katex'
 import 'katex/dist/katex.min.css'
 
-const CustomMarkdown = ({ text }) => {
+type CustomMarkdownProps = {
+    text: string
+}
+
+const CustomMarkdown = ({ text }: CustomMarkdownProps) => {
     return (
-        <div className={``}>
+        <div className=''>
             <ReactMarkdown
-                className="not-apply-tailwind"
+                className='not-apply-tailwind'
                 remarkPlugins={[remarkGfm, remarkMath]}
-                rehypePlugins={[rehypeKatex]}
+                rehypePlugins={[rehypeKatex as unknown as never]}
                 children={text}
             />
         </div>
